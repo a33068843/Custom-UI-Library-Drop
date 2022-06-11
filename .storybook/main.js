@@ -20,6 +20,13 @@ module.exports = {
           '@storybook/react > acorn-jsx',
         ],
       },
+      resolve: {
+        ...config.resolve,
+        alias: {
+          ...config.resolve.alias,
+          '@': resolve('', 'src'),
+        },
+      },
     };
   },
 };

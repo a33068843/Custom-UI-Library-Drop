@@ -1,40 +1,36 @@
-import React from 'react';
-
+import Page from './Button.docs.mdx';
 import { Button } from './Button';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
-  component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  title: 'Example/MMDX in stories',
   argTypes: {
-    backgroundColor: { control: 'color' },
+    label: { description: 'Fuck you', control: 'text' },
+    borderWidth: { control: { type: 'number', min: 0, max: 10 } },
+  },
+  parameters: {
+    docs: {
+      // page: Page,
+      page: null,
+    },
   },
 };
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <Button {...args} />;
+// export function PrimaryButton() {
+//   return <Button primary label='Primary button' />;
+// }
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Button',
+// const Template = (args) => <Button {...args} />;
+export const PrimaryButton = (args) => {
+  return <Button {...args} />;
+};
+PrimaryButton.args = {
+  label: 'abc',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};
+// export const SecondaryButton = (args) => {
+//   return <Button {...args} />;
+// };
+// SecondaryButton.args = {
+//   label: 'aaaaabc',
+// };
+// export const Test = (args) =>

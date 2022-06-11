@@ -1,0 +1,20 @@
+import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Button } from './Button';
+
+# Embedding stories by reference in MDX files
+
+In this example `Example.stories.jsx` import an MDX file, which contains
+references to stories by their unique ID.
+
+See also [CSF Stories with arbitrary MDX](https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/recipes.md#csf-stories-with-arbitrary-mdx).
+
+export const Template = (args) => <Button {...args} />;
+
+## Button
+
+<Story name='test' id='example-mmdx-in-stories--primary-button' />
+
+## HEY
+
+<ArgsTable of={Button} />
+_You should be able to see the source of the above story._
